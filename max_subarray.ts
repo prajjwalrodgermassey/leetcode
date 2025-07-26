@@ -26,12 +26,12 @@ function maxSub(arr: number[]) {
   for (let i = 1; i < arr.length; i++) {
     /**(CE) :- checking here if the number existing at arr[i] is negative enough when it is added
      * (CE) makes the sum even smaller than arr[i], conversly it says that sum should already be negative, because
-     * (CE) that is the only case which would make adding arr[i] to it (the sum) smaller than arr[i]
+     * (CE) that is the only case which would make adding arr[i] to it (the sum) smaller than arr[i] itself
      * (CE) e.g. sum = -2 and arr[i] = 5 adding these 2 would always result in sum being smaller
      * (CE) e.g. sum = -2 and arr[i] = -5 adding these 2 would also always result in sum being smaller
      *
      * (CE) Assigning arr[i] to sum in this case as it would mark the beginning of the new array, if arr[i] is positive
-     * (CE) and if arr[i] is negative then it just puts sum equals to the negative sum of these 2 (sum + arr[i]) which would
+     * (CE) and if arr[i] is negative then it just puts sum equals to the arr[i] which would
      * (CE) obvisouly not be the maximum subarray as adding these 2 would obviously result in a number smaller than
      * (CE) sum.
      */
