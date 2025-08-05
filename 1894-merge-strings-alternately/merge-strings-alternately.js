@@ -28,6 +28,8 @@ var mergeAlternately = function (word1, word2) {
     }
   }
 
+  /* (CE) :- Here we check if the final value of i is less than length of string 2 i.e. length of word1 is less than length of word2 then we slice and append the string 2 at the end
+   */
   if (i < l2) {
     finalString += word2.slice(i);
   }
