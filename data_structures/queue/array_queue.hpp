@@ -4,6 +4,18 @@
 #include <iostream>
 #include <vector>
 
+// NOTE :- In order to use the queue keep in mind that we first increment the rear and then insert the element so that the rear always at any given time points to the last element that has been inserted and we know till where we have to run the loop.
+// If we just insert the element and then increment the rear it would mean that now rear points to the empty space which would require us to manage the repurcussions manually.
+// For simple queue use the above mentioned appraoach
+
+/*(CE) Key Points :-
+ *(CE) 1) Empty queue front = rear = -1;
+ *(CE) 2) First element insertion (when qeuue is empty) increment the front to 0 and then increment the rear to 0 and insert the element at rear
+ *(CE) 3) Now for subsequent insertions increment the rear by 1 and insert the element at the rear
+ *(CE) 4) For Dequeuing remember to remove the element from the front that just means incrementing the front by 1 position
+ *(CE) 5) If at any position you encounter a situation while dequeuing where front = rear that mean you're already at the last element output it and then set both front and rear to -1
+ */
+
 template <typename T>
 class Array_Queue
 {
@@ -124,6 +136,9 @@ public:
         return;
     }
 };
+
+// NOTE :- Main difference between the circular queue and the normal queue is utilizing the space that has been emptied using dequeue method
+//(CE) :- instead of incrementing use front = (front+1) % capacity for front and for rear use rear = (rear+1) % capacity
 
 template <typename T>
 class Circular_Array_Queue : public Array_Queue<T>
