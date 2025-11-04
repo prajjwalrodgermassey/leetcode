@@ -6,6 +6,7 @@ the given data */
 class Solution {
 public:
     string predictPartyVictory(string senate) {
+        /* note we created an int queue, earlier it was a char qeueue which was causing the issue as when the index got greated than +128 it would turncate those indicies causing the issue*/
         std::queue<int> r_index_queue, d_index_queue;
 
    
